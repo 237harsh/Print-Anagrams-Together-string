@@ -1,0 +1,23 @@
+class Solution{
+  public:
+    vector<vector<string> > Anagrams(vector<string>& ll) {
+      vector<vector<string> >an;
+        unordered_map<string,vector<string>>mp;
+        for(int i=0;i<ll.size();i++)
+        {
+           string s=ll[i];
+           sort(s.begin(),s.end());
+           {
+               mp[s].push_back(ll[i]);
+           }
+           
+        }
+        for(auto x:mp)
+        {
+            an.push_back(x.second);
+        }
+        return an;
+    }
+};
+
+https://practice.geeksforgeeks.org/problems/print-anagrams-together/1/?page=2&category[]=Strings&sortBy=submissions#
